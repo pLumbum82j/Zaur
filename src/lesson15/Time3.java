@@ -1,27 +1,33 @@
-package lesson14;
+package lesson15;
 
-public class Time {
+public class Time3 {
     public static void main(String[] args) {
-        timeAttack();
+        TimePause();
     }
 
-    public static void timeAttack() {
+    public static void TimePause() {
+        int i = 0;
         CHAS:
-        for (int i = 0; i < 6; i++) {
-
+        while (i < 6) {
+            int j = 0;
             MINUTA:
-            for (int j = 0; j < 60; j++) {
+            do {
                 if (i > 1 && j % 10 == 0) {
                     break CHAS;
                 }
+                int k = 0;
                 SECUNDA:
-                for (int k = 0; k < 60; k++) {
+                while (k < 60) {
                     if ((k * i) > j) {
+                        j++;
                         continue MINUTA;
                     }
                     System.out.println(i + ":" + j + ":" + k);
+                    k++;
                 }
-            }
+                j++;
+            } while (j < 60);
+            i++;
         }
     }
 }
