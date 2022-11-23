@@ -3,20 +3,20 @@ package lesson18;
 public class Lesson18HW {
 
     public static int[] sortirovka1(int[] array) {
-        int m;
-        for (int j = 0; j < array.length; j++) {
-            int min = array[j];
-            int index = j;
-            for (int i = j + 1; i < array.length; i++) {
-                if (array[i] < min) {
-                    min = array[i];
-                    index = i;
+        int tempVlaue;
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];  //3
+            int index = i; //1
+            for (int j = i + 1; j < array.length; j++) { //2
+                if (array[j] < min) { // 5 < 3 not
+                    min = array[j]; // min = 0
+                    index = j; // 1
                 }
             }
-            if (j != index){
-                m = array[j];
-                array[j]= min;
-                array[index] = m;
+            if (i != index){ // 1 != 1 yes
+                tempVlaue = array[i];  //temp = 3
+                array[i]= min; // array[0] = 0
+                array[index] = tempVlaue; // array[1] = 3
             }
         }
 
@@ -47,11 +47,9 @@ public class Lesson18HW {
 
 class testhw {
     public static void main(String[] args) {
-        Lesson18HW lesson18HW = new Lesson18HW();
-        int[] array1 = {3, 7, 5, 12, 7, 8, 0, 87};
-        int[] array2 = Lesson18HW.sortirovka1(array1);
-        for (int a = 0; a < array2.length; a++) {
-            System.out.print(array2[a] + ", ");
+        int[] array1 = {3, 0, 5, 12};
+        for (int a = 0; a < array1.length; a++) {
+            System.out.print(array1[a] + ", ");
         }
         String[][] array3 = {{"hello", "bye"}, {"good", "job"}, {"people"}};
         Lesson18HW.showArray(array3);
