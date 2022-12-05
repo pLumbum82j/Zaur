@@ -1,8 +1,7 @@
 package lesson23.test1.p1;
 
 public class X {
-    X(){
-    }
+    X(){}
     public void abc(){
         System.out.println("X");
     }
